@@ -18,6 +18,11 @@ export default new Vuex.Store({
       }
     ]
   },
+  getters: {
+    computedProducts (state) {
+      return state.products
+    }
+  },
   mutations: {
   },
   actions: {
