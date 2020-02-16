@@ -23,16 +23,24 @@
   export default {
     name: 'Product',
     data: () => {
-      return {
-        products: []
-      }
+      // return {
+      //   products: []
+      // }
+      // console.log(this.$store.state.products)
+      // return this.$store.state
+      return {}
     },
     mounted() {
       console.log('Product is mounted');
 
-      axios.get('http://127.0.0.1:8000/api/products?per_page=10').then(response => {
+      /*axios.get('http://127.0.0.1:8000/api/products?per_page=10').then(response => {
         this.products = response.data.data
-      });
+      });*/
+    },
+    computed: {
+      products() {
+        return this.$store.state.products
+      }
     }
   }
 </script>
